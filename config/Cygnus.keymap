@@ -15,6 +15,7 @@
     quick-tap-ms = <0>;
 };
 
+// 20260413 add
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 10000>; };
 
 / {
