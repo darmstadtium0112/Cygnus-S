@@ -16,6 +16,7 @@
 };
 
 // 20260413 add
+
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 10000>; };
 
 / {
@@ -73,10 +74,10 @@
 
         NUMBER {
             bindings = <
-&kp GRAVE  &none   &kp AT  &kp LBKT  &kp RBKT                      &kp BSLH  &kp SEMI  &kp APOS  &kp FSLH  &kp TAB
-&kp N1     &kp N2  &kp N3  &kp N4    &kp N5    &trans      &trans  &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-&kp F1     &kp F2  &kp F3  &kp F4    &kp F5    &kp F6      &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-&trans     &trans  &trans  &trans    &trans    &trans      &trans  &trans                                  &trans
+&kp UNDER  &kp INT_YEN  &kp AT  &kp LBKT  &kp RBKT                      &kp BSLH  &kp SEMI  &kp APOS  &kp FSLH  &kp TAB
+&kp N1     &kp N2       &kp N3  &kp N4    &kp N5    &trans      &trans  &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
+&kp F1     &kp F2       &kp F3  &kp F4    &kp F5    &kp F6      &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+&trans     &trans       &trans  &trans    &trans    &trans      &trans  &trans                                  &trans
             >;
         };
 
@@ -91,10 +92,10 @@
 
         ARROW {
             bindings = <
-&trans  &kp LS(LA(TAB))  &kp LG(UP)          &kp LA(TAB)    &trans                      &trans  &trans    &kp UP    &trans     &trans
-&trans  &kp LG(LEFT)     &kp LG(DOWN_ARROW)  &kp LG(RIGHT)  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-&trans  &trans           &trans              &trans         &trans  &trans      &trans  &trans  &kp HOME  &kp END   &trans     &trans
-&trans  &trans           &trans              &trans         &trans  &trans      &trans  &trans                                 &trans
+&trans  &trans        &kp LG(UP)          &trans         &trans                      &trans  &trans    &kp UP    &trans     &trans
+&trans  &kp LG(LEFT)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT)  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans  &trans        &trans              &trans         &trans  &trans      &trans  &trans  &kp HOME  &kp END   &trans     &trans
+&trans  &trans        &trans              &trans         &trans  &trans      &trans  &trans                                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
