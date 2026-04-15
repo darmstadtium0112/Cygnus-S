@@ -27,6 +27,11 @@
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <20 21>;
         };
+
+        input_change {
+            bindings = <&kp GRAVE>;
+            key-positions = <12 13>;
+        };
     };
 
     macros {
