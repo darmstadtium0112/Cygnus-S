@@ -28,12 +28,12 @@
             key-positions = <20 21>;
         };
 
-        input_change {
+        input_change_left {
             bindings = <&kp GRAVE>;
             key-positions = <12 13>;
         };
 
-        input_change {
+        input_change_right {
             bindings = <&kp GRAVE>;
             key-positions = <18 19>;
         };
