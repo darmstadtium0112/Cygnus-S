@@ -32,6 +32,11 @@
             bindings = <&kp GRAVE>;
             key-positions = <12 13>;
         };
+
+        input_change {
+            bindings = <&kp GRAVE>;
+            key-positions = <18 19>;
+        };
     };
 
     macros {
