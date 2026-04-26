@@ -42,19 +42,29 @@
     combos {
         compatible = "zmk,combos";
 
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
         };
 
-        input_change_left {
-            bindings = <&kp GRAVE>;
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
             key-positions = <12 13>;
         };
 
-        input_change_right {
-            bindings = <&kp GRAVE>;
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        mouse_left_click {
+            bindings = <&mkp MB1>;
             key-positions = <18 19>;
+        };
+
+        mouse_right_click {
+            bindings = <&mkp MB2>;
+            key-positions = <19 20>;
         };
     };
 
@@ -103,10 +113,10 @@
 
         NUMBER {
             bindings = <
-&kp TAB  &none   &none   &kp LS(LEFT_PARENTHESIS)  &kp LS(N0)                      &kp LEFT_BRACKET  &kp N7  &kp N8  &kp N9  &kp PRINTSCREEN
-&trans   &none   &none   &kp RIGHT_BRACKET         &kp BSLH    &trans      &trans  &none             &kp N4  &kp N5  &kp N6  &trans
-&trans   &none   &none   &none                     &none       &trans      &trans  &kp N0            &kp N1  &kp N2  &kp N3  &trans
-&trans   &trans  &trans  &trans                    &trans      &trans      &trans  &trans                                    &trans
+&none   &none   &none   &kp LS(N9)         &kp LS(N0)                      &kp LEFT_BRACKET  &kp N7  &kp N8  &kp N9  &none
+&none   &none   &none   &kp RIGHT_BRACKET  &kp BSLH    &trans      &trans  &none             &kp N4  &kp N5  &kp N6  &none
+&none   &none   &none   &none              &none       &trans      &trans  &kp N0            &kp N1  &kp N2  &kp N3  &none
+&trans  &trans  &trans  &trans             &trans      &trans      &trans  &trans                                    &trans
             >;
         };
 
