@@ -10,13 +10,32 @@
 #define SCROLL 5
 #define NUM 6
 
+#define JP_DQUOTE     LS(N2)            // " (JISではShift+2)
+#define JP_AMPERSAND  LS(N6)            // & (JISではShift+6)
+#define JP_QUOTE      LS(N7)            // ' (JISではShift+7)
+#define JP_LPAREN     LS(N8)            // ( (JISではShift+8)
+#define JP_RPAREN     LS(N9)            // ) (JISではShift+9)
+#define JP_EQUAL      LS(MINUS)         // = (JISではShift+-)
+#define JP_PLUS       LS(SEMICOLON)     // + (JISではShift+;)
+#define JP_ASTERISK   LS(SINGLE_QUOTE)  // * (JISではShift+:)
+#define JP_COLON      SINGLE_QUOTE      // : (JISでは物理的な ' の位置)
+#define JP_AT         LEFT_BRACKET      // @ (JISでは物理的な [ の位置)
+#define JP_LBRACKET   RIGHT_BRACKET     // [ (JISでは物理的な ] の位置)
+#define JP_RBRACKET   BACKSLASH         // ] (JISでは物理的な \ の位置)
+#define JP_CARET      EQUAL             // ^ (JISでは物理的な = の位置)
+#define JP_TILDE      LS(EQUAL)         // ~ (JISではShift+^)
+#define JP_PIPE       LS(INT_YEN)       // | (JISの「¥」キー + Shift)
+#define JP_UNDERSCORE LS(INT_RO)        // _ (JISではShift+ろ)
+#define JP_YEN        INT_RO            // ¥ (JISでは「ろ」のキー)
+#define JP_BACKQUOTE  LS(LEFT_BRACKET)  // ` (JISではShift+@)
+#define JP_BACKSLASH  INT_YEN           // \ (JISの「¥」キー)
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
 };
 
 // 20260413 add
-
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 10000>; };
 
 / {
