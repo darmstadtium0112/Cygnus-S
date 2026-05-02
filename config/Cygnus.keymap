@@ -77,27 +77,27 @@
             label = "TO_LAYER_0";
         };
 
-        bt0_ipad: bt0 {
+        bt0_private_pc: bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
-                <&macro_wait_time 200>,
-                <&tog_on 1>;
+                <&macro_wait_time 200>;
 
             label = "BT0";
         };
 
-        bt1_private_pc: bt1 {
+        bt1_private_ipad: bt1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
-                <&macro_wait_time 200>;
+                <&macro_wait_time 200>,
+                <&tog_on 1>;
 
             label = "BT1";
         };
@@ -133,7 +133,8 @@
                 <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 4>,
-                <&macro_wait_time 200>;
+                <&macro_wait_time 200>,
+                <&tog_on 1>;
 
             label = "BT4_WORK_IPHONE";
         };
@@ -258,10 +259,10 @@
 
         settings {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                              &bt0_private_pc  &bt1_private_ipad  &bt2_work_pc_1  &bt3_work_pc_2  &bt4_work_iphone
+&trans  &trans  &trans  &trans  &trans  &trans      &studio_unlock  &trans           &trans             &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans           &trans             &trans          &trans          &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                              &bt BT_CLR_ALL
             >;
         };
     };
