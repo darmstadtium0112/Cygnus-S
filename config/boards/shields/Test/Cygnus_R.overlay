@@ -33,7 +33,7 @@
         device = <&trackball>;
 
         // 20260413 add
-        input-processors = <&zip_temp_layer 4 10000>;
+        input-processors = <&zip_temp_layer 6 10000>;
     };
 };
 
