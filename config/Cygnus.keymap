@@ -9,6 +9,7 @@
 //#define MOUSE 4
 //#define SCROLL 5
 //#define NUM 6
+
 #define JP_DQUOTE     LS(N2)            // " (JISではShift+2)
 #define JP_AMPERSAND  LS(N6)            // & (JISではShift+6)
 #define JP_QUOTE      LS(N7)            // ' (JISではShift+7)
@@ -76,11 +77,65 @@
             label = "TO_LAYER_0";
         };
 
-        bt0: bt0 {
+        bt0_ipad: bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings =
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 0>,
+                <&macro_wait_time 200>,
+                <&tog_on 1>;
+
             label = "BT0";
+        };
+
+        bt1_private_pc: bt1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 200>;
+
+            label = "BT1";
+        };
+
+        bt2_work_pc_1: bt2_work_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 2>,
+                <&macro_wait_time 200>;
+
+            label = "BT2_WORK_1";
+        };
+
+        bt3_work_pc_2: bt3_work_pc_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 3>,
+                <&macro_wait_time 200>;
+
+            label = "BT3_WORK_PC_2";
+        };
+
+        bt4_work_iphone: bt4_work_iphone {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 4>,
+                <&macro_wait_time 200>;
+
+            label = "BT4_WORK_IPHONE";
         };
     };
 
@@ -124,44 +179,66 @@
         default_windows {
             bindings = <
 &kp Q      &kp W         &kp E         &kp R           &kp T                                                      &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D         &kp F           &kp G        &lt 6 ESCAPE             &kp SEMICOLON        &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&kp A      &kp S         &kp D         &kp F           &kp G        &lt 8 ESCAPE             &kp INTERNATIONAL_1  &kp H        &kp J  &kp K      &kp L    &kp MINUS
 &kp Z      &kp X         &kp C         &kp V           &kp B        &kp INTERNATIONAL_5      &kp INTERNATIONAL_4  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &lt 3 SPACE  &kp DELETE               &kp BACKSPACE        &lt 1 ENTER                             &lt 5 ESCAPE
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &lt 4 SPACE  &kp DELETE               &kp BACKSPACE        &lt 2 ENTER                             &lt 7 ESCAPE
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
-        NUM_FUNC {
+        default_ios {
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4             &kp N5                          &kp N6      &kp N7    &kp N8            &kp N9   &kp N0
-&trans  &trans  &trans  &kp RIGHT_BRACKET  &kp LS(N8)  &trans      &trans  &kp LS(N9)  &kp BSLH  &kp LEFT_BRACKET  &trans   &kp EQUAL
-&kp F1  &kp F2  &kp F3  &kp F4             &kp F5      &kp F6      &kp F7  &kp F8      &kp F9    &kp F10           &kp F11  &kp F12
-&trans  &trans  &trans  &trans             &trans      &trans      &trans  &trans                                           &trans
+&kp Q      &kp W         &kp E         &kp R           &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S         &kp D         &kp F           &kp G        &lt 8 ESCAPE      &kp INT1             &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&kp Z      &kp X         &kp C         &kp V           &kp B        &kp INT5          &kp INTERNATIONAL_4  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &lt 5 SPACE  &kp DELETE        &kp BACKSPACE        &lt 3 ENTER                             &lt 7 ESCAPE
+            >;
+
+            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+        };
+
+        num_windows {
+            bindings = <
+&kp N1  &kp N2   &kp N3    &kp N4             &kp N5                          &kp N6      &kp N7    &kp N8            &kp N9   &kp N0
+&trans  &kp SQT  &kp SEMI  &kp RIGHT_BRACKET  &kp LS(N8)  &trans      &trans  &kp LS(N9)  &kp BSLH  &kp LEFT_BRACKET  &trans   &kp EQUAL
+&kp F1  &kp F2   &kp F3    &kp F4             &kp F5      &kp F6      &kp F7  &kp F8      &kp F9    &kp F10           &kp F11  &kp F12
+&trans  &trans   &trans    &trans             &trans      &trans      &trans  &trans                                           &trans
             >;
         };
 
-        LAYER_2 {
+        num_ios {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp N1  &kp N2   &kp N3         &kp N4    &kp N5                                    &kp N6                 &kp N7    &kp N8   &kp N9   &kp N0
+&trans  &kp SQT  &kp SEMICOLON  &kp LBKT  &kp LEFT_PARENTHESIS  &trans      &trans  &kp RIGHT_PARENTHESIS  &kp RBKT  &trans   &trans   &kp EQUAL
+&kp F1  &kp F2   &kp F3         &kp F4    &kp F5                &kp F6      &kp F7  &kp F8                 &kp F9    &kp F10  &kp F11  &kp F12
+&trans  &trans   &trans         &trans    &trans                &trans      &trans  &trans                                             &trans
             >;
         };
 
-        ARROW {
+        arrow_windows {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                          &trans  &trans    &kp UP    &trans     &kp LG(LS(S))
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LG(PRINTSCREEN)
-&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &kp HOME  &kp END   &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp DELETE  &trans                                 &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &kp UP    &trans     &kp LG(LS(S))
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LG(PRINTSCREEN)
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp HOME  &kp END   &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        MOUSE {
+        arrow_ios {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &kp UP    &trans     &kp LS(LG(NUMBER_3))
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp HOME  &kp END   &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                 &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+        };
+
+        mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans     &mkp MB4   &mkp MB5   &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans
@@ -170,7 +247,7 @@
             >;
         };
 
-        SCROLL {
+        scroll {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -179,24 +256,13 @@
             >;
         };
 
-        SETTINGS {
+        settings {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans  &trans  &trans  &trans  &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                  &bt BT_CLR_ALL
             >;
-        };
-
-        default_ios {
-            bindings = <
-&kp Q      &kp W         &kp E         &kp R           &kp T                                                &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D         &kp F           &kp G        &lt 6 ESCAPE             &kp SEMICOLON  &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&kp Z      &kp X         &kp C         &kp V           &kp B        &kp INTERNATIONAL_1      &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &lt 3 SPACE  &kp GRAVE                &kp BACKSPACE  &lt 1 ENTER                             &lt 5 ESCAPE
-            >;
-
-            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
     };
 };
